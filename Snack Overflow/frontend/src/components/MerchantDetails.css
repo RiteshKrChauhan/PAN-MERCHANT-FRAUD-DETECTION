@@ -4,9 +4,9 @@
 }
 
 .back-button {
-  background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  background: rgba(26, 35, 50, 0.95);
+  color: #14b8a6;
+  border: 2px solid #14b8a6;
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 1rem;
@@ -17,7 +17,7 @@
 }
 
 .back-button:hover {
-  background: #667eea;
+  background: #14b8a6;
   color: white;
   transform: translateX(-4px);
 }
@@ -68,20 +68,20 @@
 
 .info-label {
   font-size: 0.9rem;
-  color: #666;
+  color: #94a3b8;
   font-weight: 500;
 }
 
 .info-value {
   font-size: 1.1rem;
-  color: #333;
+  color: #e2e8f0;
   font-weight: 600;
   word-break: break-all;
 }
 
 .badge {
   display: inline-block;
-  background: #667eea;
+  background: #14b8a6;
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -96,11 +96,12 @@
 }
 
 .metric-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
   color: white;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
+  border: 1px solid rgba(20, 184, 166, 0.3);
 }
 
 .metric-value {

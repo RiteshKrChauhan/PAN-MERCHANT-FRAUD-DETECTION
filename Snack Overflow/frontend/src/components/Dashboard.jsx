@@ -64,19 +64,19 @@ function Dashboard() {
             title="Total Fraud Rings"
             value={fraudRings.length}
             icon="🔗"
-            color="#667eea"
+            color="#ef4444"
           />
           <StatsCard
             title="Largest Ring Size"
             value={fraudRings.length > 0 ? fraudRings[0].size : 0}
             icon="👥"
-            color="#f093fb"
+            color="#dc2626"
           />
           <StatsCard
             title="Total Fraudulent Merchants"
             value={fraudRings.reduce((sum, ring) => sum + ring.size, 0)}
             icon="⚠️"
-            color="#4facfe"
+            color="#991b1b"
           />
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 import './FraudRingGraph.css';
 
@@ -23,11 +23,11 @@ function FraudRingGraph({ data }) {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  const graphData = {
+  const graphData = useMemo(() => ({
     nodes: data.nodes.map(node => ({
       id: node.id,
       ...node,
-      color: '#667eea'
+      color: '#ef4444'
     })),
     links: data.edges.map(edge => ({
       source: edge.source,
@@ -35,7 +35,7 @@ function FraudRingGraph({ data }) {
       value: edge.weight,
       reason: edge.reason
     }))
-  };
+  }), [data]);
 
   const handleNodeHover = (node) => {
     setHoveredNode(node);
@@ -65,19 +65,19 @@ function FraudRingGraph({ data }) {
             // Draw node circle
             ctx.beginPath();
             ctx.arc(node.x, node.y, 5, 0, 2 * Math.PI, false);
-            ctx.fillStyle = hoveredNode?.id === node.id ? '#ff6b6b' : '#667eea';
+            ctx.fillStyle = hoveredNode?.id === node.id ? '#dc2626' : '#ef4444';
             ctx.fill();
             
             // Draw label if hovered
             if (hoveredNode?.id === node.id) {
               ctx.textAlign = 'center';
               ctx.textBaseline = 'middle';
-              ctx.fillStyle = '#333';
+              ctx.fillStyle = '#fca5a5';
               ctx.fillText(label, node.x, node.y - 10);
             }
           }}
           linkWidth={link => link.value}
-          linkColor={() => 'rgba(102, 126, 234, 0.3)'}
+          linkColor={() => 'rgba(239, 68, 68, 0.3)'}
           onNodeHover={handleNodeHover}
           onNodeClick={handleNodeClick}
           cooldownTicks={100}
