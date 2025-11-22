@@ -1,0 +1,74 @@
+.fraud-ring-graph {
+  position: relative;
+  width: 100%;
+}
+
+.graph-container {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.node-tooltip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  z-index: 10;
+  border: 2px solid #667eea;
+}
+
+.tooltip-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.9rem;
+}
+
+.tooltip-label {
+  font-weight: 600;
+  color: #666;
+}
+
+.tooltip-value {
+  color: #333;
+  text-align: right;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tooltip-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 2px solid #f0f0f0;
+  font-size: 0.85rem;
+  color: #667eea;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .node-tooltip {
+    position: static;
+    margin-top: 16px;
+    width: 100%;
+  }
+}

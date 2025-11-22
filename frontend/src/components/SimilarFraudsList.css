@@ -1,0 +1,134 @@
+.similar-frauds-list {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.frauds-table {
+  min-width: 100%;
+  background: white;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 60px 120px 100px 150px 100px 120px 120px 120px;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 60px 120px 100px 150px 100px 120px 120px 120px;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.table-row:hover {
+  background: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.table-cell {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.rank {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.merchant-id {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #333;
+}
+
+.similarity-badge {
+  background: #51cf66;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.tier-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.view-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.view-button:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 50px 100px 90px 120px 80px 100px 100px 100px;
+    gap: 8px;
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .frauds-table {
+    display: block;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .table-cell {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .table-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #666;
+  }
+}
